@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/water-lily-by-kevin-macleod-from-filmmusic-io.mp3-bbd3b2aa93cb43b0f0aaf267ea10c5bf.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/water-lily-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/water-lily-by-kevin-macleod-from-filmmusic-io.mp3-bbd3b2aa93cb43b0f0aaf267ea10c5bf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

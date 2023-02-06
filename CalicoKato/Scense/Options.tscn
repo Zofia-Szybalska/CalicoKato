@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/DynimicFonts/DynamicFontText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/DynimicFonts/DynamicFontTitle.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/Options.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/MainMenuButton.gd" type="Script" id=4]
+[ext_resource path="res://Assets/MainMenu/Button.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MainMenu/UI8.png" type="Texture" id=6]
+[ext_resource path="res://Assets/DynimicFonts/DynimicFontButton.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Assets/MainMenu/KotoMenu.png" type="Texture" id=9]
+[ext_resource path="res://Assets/music/kawai-kitsune-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=10]
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Options" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.16
+anchor_right = 0.5
+anchor_bottom = 0.16
+margin_left = -192.0
+margin_top = -28.0
+margin_right = 192.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+text = "Options"
+
+[node name="Sounds" type="TextureRect" parent="."]
+anchor_left = 0.203
+anchor_top = 0.64
+anchor_right = 0.203
+anchor_bottom = 0.64
+margin_left = -175.872
+margin_top = -192.0
+margin_right = 176.128
+margin_bottom = 192.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Label2" type="Label" parent="Sounds"]
+margin_left = 128.0
+margin_top = 32.0
+margin_right = 227.0
+margin_bottom = 53.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sounds"
+
+[node name="Music" type="Label" parent="Sounds"]
+margin_left = 32.0
+margin_top = 192.0
+margin_right = 128.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Music"
+
+[node name="Effects" type="Label" parent="Sounds"]
+margin_left = 32.0
+margin_top = 288.0
+margin_right = 132.0
+margin_bottom = 309.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Effects"
+
+[node name="Master" type="Label" parent="Sounds"]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 132.0
+margin_bottom = 117.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Master"
+
+[node name="MusicSlider" type="HSlider" parent="Sounds"]
+anchor_left = 0.182
+anchor_top = 0.354
+anchor_right = 0.182
+anchor_bottom = 0.354
+margin_left = 95.936
+margin_top = 56.064
+margin_right = 255.936
+margin_bottom = 72.064
+min_value = -100.0
+max_value = 0.0
+
+[node name="EffectsSlider" type="HSlider" parent="Sounds"]
+anchor_left = 0.182
+anchor_top = 0.354
+anchor_right = 0.182
+anchor_bottom = 0.354
+margin_left = 95.936
+margin_top = 152.064
+margin_right = 255.936
+margin_bottom = 168.064
+min_value = -80.0
+max_value = 0.0
+
+[node name="MasterSlider" type="HSlider" parent="Sounds"]
+anchor_left = 0.182
+anchor_top = 0.354
+anchor_right = 0.182
+anchor_bottom = 0.354
+margin_left = 95.936
+margin_top = -39.936
+margin_right = 255.936
+margin_bottom = -23.936
+min_value = -80.0
+max_value = 0.0
+
+[node name="MainMenuButton" type="Button" parent="."]
+anchor_left = 0.891
+anchor_top = 0.88
+anchor_right = 0.891
+anchor_bottom = 0.88
+margin_left = -80.384
+margin_top = -48.0001
+margin_right = 79.616
+margin_bottom = 47.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "Back"
+icon = ExtResource( 5 )
+flat = true
+icon_align = 1
+expand_icon = true
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.593
+anchor_top = 0.652
+anchor_right = 0.593
+anchor_bottom = 0.652
+margin_left = -168.232
+margin_top = -264.2
+margin_right = 168.768
+margin_bottom = 264.8
+texture = ExtResource( 9 )
+expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+bus = "Music"
+
+[connection signal="value_changed" from="Sounds/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="Sounds/EffectsSlider" to="." method="_on_EffectsSlider_value_changed"]
+[connection signal="value_changed" from="Sounds/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_MainMenuButton_pressed"]

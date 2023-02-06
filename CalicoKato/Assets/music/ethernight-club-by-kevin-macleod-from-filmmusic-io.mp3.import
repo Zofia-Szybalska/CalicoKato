@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ethernight-club-by-kevin-macleod-from-filmmusic-io.mp3-6c8935a37f89f4c2b70abd7220da3563.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/ethernight-club-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/ethernight-club-by-kevin-macleod-from-filmmusic-io.mp3-6c8935a37f89f4c2b70abd7220da3563.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

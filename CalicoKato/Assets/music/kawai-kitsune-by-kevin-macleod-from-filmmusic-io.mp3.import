@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kawai-kitsune-by-kevin-macleod-from-filmmusic-io.mp3-a3f9ee357243633f7a8747e689456333.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/kawai-kitsune-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/kawai-kitsune-by-kevin-macleod-from-filmmusic-io.mp3-a3f9ee357243633f7a8747e689456333.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

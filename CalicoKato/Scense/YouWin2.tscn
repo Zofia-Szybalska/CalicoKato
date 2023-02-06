@@ -1,0 +1,149 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/DynimicFonts/DynamicFontText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/DynimicFonts/DynamicFontTitle.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/MainMenuButton.gd" type="Script" id=3]
+[ext_resource path="res://Assets/DynimicFonts/DynimicFontButton.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/YouWin.gd" type="Script" id=5]
+[ext_resource path="res://Assets/MainMenu/Button.png" type="Texture" id=6]
+[ext_resource path="res://Assets/music/glitter-blast-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/CreditsButton.gd" type="Script" id=8]
+
+[node name="YouWin2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -32.0
+margin_right = 2706.0
+margin_bottom = 1519.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.357
+anchor_right = 0.5
+anchor_bottom = 0.357
+margin_left = -416.0
+margin_top = -22.2
+margin_right = 416.0
+margin_bottom = 22.8
+custom_fonts/font = ExtResource( 1 )
+text = "You played with the dog and didn't attack him, so you two became friends!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.187
+anchor_right = 0.5
+anchor_bottom = 0.187
+margin_left = -448.0
+margin_top = -48.2
+margin_right = 448.0
+margin_bottom = 47.8
+custom_fonts/font = ExtResource( 2 )
+text = "Congratulations!"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.497
+anchor_right = 0.5
+anchor_bottom = 0.497
+margin_left = -256.0
+margin_top = -10.2
+margin_right = 253.0
+margin_bottom = 10.8
+custom_fonts/font = ExtResource( 1 )
+text = "You also collected this many catnips"
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.924
+anchor_right = 0.5
+anchor_bottom = 0.924
+margin_left = -512.0
+margin_top = -10.4
+margin_right = 512.0
+margin_bottom = 10.6
+custom_fonts/font = ExtResource( 1 )
+text = "Thanks for playing!"
+align = 1
+valign = 1
+
+[node name="CatnipCountLapel" type="Label" parent="."]
+anchor_left = 0.488
+anchor_top = 0.654
+anchor_right = 0.488
+anchor_bottom = 0.654
+margin_left = -83.712
+margin_top = -40.4
+margin_right = 84.288
+margin_bottom = 40.6
+custom_fonts/font = ExtResource( 2 )
+text = "10 /10"
+
+[node name="CatnipCommentLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.773
+anchor_right = 0.5
+anchor_bottom = 0.773
+margin_left = -384.0
+margin_top = -15.8
+margin_right = 384.0
+margin_bottom = 16.2
+custom_fonts/font = ExtResource( 1 )
+text = "Wow! That's all of them!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="MainMenuButton" type="Button" parent="."]
+anchor_left = 0.094
+anchor_top = 0.867
+anchor_right = 0.094
+anchor_bottom = 0.867
+margin_left = -96.256
+margin_top = -40.2
+margin_right = 95.744
+margin_bottom = 39.8
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Menu"
+icon = ExtResource( 6 )
+flat = true
+icon_align = 1
+expand_icon = true
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "Music"
+
+[node name="CreditsButton" type="Button" parent="."]
+anchor_left = 0.897
+anchor_top = 0.88
+anchor_right = 0.897
+anchor_bottom = 0.88
+margin_left = -86.528
+margin_top = -48.0001
+margin_right = 86.472
+margin_bottom = 47.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Credits"
+icon = ExtResource( 6 )
+flat = true
+icon_align = 1
+expand_icon = true
+script = ExtResource( 8 )
+
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_CreditsButton_pressed"]

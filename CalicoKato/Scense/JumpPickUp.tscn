@@ -1,0 +1,144 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/upgrades/cross.png" type="Texture" id=1]
+[ext_resource path="res://Assets/upgrades/arrow-UP.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/JumpPickUp.gd" type="Script" id=3]
+[ext_resource path="res://Assets/DynimicFonts/DynamicFontUpgrade.tres" type="DynamicFont" id=4]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.08, 0.08 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "picked_up"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.0175, 0.0175 ) ]
+}
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.00917431, 1 )
+colors = PoolColorArray( 0.640625, 0.617458, 0.0475464, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 25.0
+height = 14.0
+
+[node name="JumpPickUp" type="Area2D"]
+script = ExtResource( 3 )
+
+[node name="SoundPickedUp" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/picked_up = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -344.0
+margin_top = -172.0
+margin_right = 341.0
+margin_bottom = 70.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "You can now jump from walls
+Click jump and direction button while holding onto wall to jump"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 40
+lifetime = 1.6
+one_shot = true
+preprocess = 0.25
+speed_scale = 1.5
+explosiveness = 1.0
+texture = ExtResource( 1 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 0.41
+angular_velocity = 28.0
+angular_velocity_random = 1.0
+linear_accel = 1.0
+linear_accel_random = 1.0
+damping = 22.0
+angle = 45.0
+angle_random = 1.0
+color_ramp = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_JumpPickUp_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/theme-for-harold-var-3-by-kevin-macleod-from-filmmusic-io.mp3-56e29569915957494874ba8522edafc1.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/theme-for-harold-var-3-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/theme-for-harold-var-3-by-kevin-macleod-from-filmmusic-io.mp3-56e29569915957494874ba8522edafc1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

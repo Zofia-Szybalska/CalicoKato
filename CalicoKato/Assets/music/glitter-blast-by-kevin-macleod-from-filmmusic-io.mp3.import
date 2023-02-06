@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/glitter-blast-by-kevin-macleod-from-filmmusic-io.mp3-d2cf3e3044c912528302df0bffe5b5b9.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/glitter-blast-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/glitter-blast-by-kevin-macleod-from-filmmusic-io.mp3-d2cf3e3044c912528302df0bffe5b5b9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

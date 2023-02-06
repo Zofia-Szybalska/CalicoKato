@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/DynimicFonts/DynamicFontTitle.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/DynimicFonts/DynamicFontText.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/DynimicFonts/DynimicFontButton.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/MainMenuButton.gd" type="Script" id=4]
+[ext_resource path="res://Assets/MainMenu/Button.png" type="Texture" id=5]
+[ext_resource path="res://Assets/music/kawai-kitsune-by-kevin-macleod-from-filmmusic-io.mp3" type="AudioStream" id=6]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 2673.0
+margin_bottom = 1494.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.16
+anchor_right = 0.5
+anchor_bottom = 0.16
+margin_left = -192.0
+margin_top = -32.0
+margin_right = 192.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 1 )
+text = "Credits"
+align = 1
+valign = 1
+
+[node name="Music" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.827
+anchor_right = 0.5
+anchor_bottom = 0.827
+margin_left = -512.0
+margin_top = -16.2
+margin_right = 512.0
+margin_bottom = 15.8
+custom_fonts/font = ExtResource( 2 )
+text = "Music"
+align = 1
+valign = 1
+
+[node name="GameMadeBy" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.284
+anchor_right = 0.5
+anchor_bottom = 0.284
+margin_left = -512.0
+margin_top = -10.4
+margin_right = 512.0
+margin_bottom = 10.6
+custom_fonts/font = ExtResource( 2 )
+text = "Game Made by"
+align = 1
+valign = 1
+
+[node name="Art" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.551
+anchor_right = 0.5
+anchor_bottom = 0.551
+margin_left = -512.0
+margin_top = -10.6
+margin_right = 512.0
+margin_bottom = 10.4
+custom_fonts/font = ExtResource( 2 )
+text = "Art"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.871
+anchor_right = 0.5
+anchor_bottom = 0.871
+margin_left = -96.0
+margin_top = -10.6
+margin_right = 97.0
+margin_bottom = 10.4
+custom_fonts/font = ExtResource( 2 )
+text = "Kevin MacLeod"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.624
+anchor_right = 0.5
+anchor_bottom = 0.624
+margin_left = -128.0
+margin_top = -22.4
+margin_right = 128.0
+margin_bottom = 22.6
+custom_fonts/font = ExtResource( 2 )
+text = "Milena Suchocka
+Kenney"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.357
+anchor_right = 0.5
+anchor_bottom = 0.357
+margin_left = -128.0
+margin_top = -22.2
+margin_right = 128.0
+margin_bottom = 22.8
+custom_fonts/font = ExtResource( 2 )
+text = "Zofia Szybalska
+Milena Suchocka"
+align = 1
+valign = 1
+
+[node name="MainMenuButton" type="Button" parent="."]
+anchor_left = 0.891
+anchor_top = 0.88
+anchor_right = 0.891
+anchor_bottom = 0.88
+margin_left = -80.384
+margin_top = -48.0001
+margin_right = 79.616
+margin_bottom = 47.9999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Menu"
+icon = ExtResource( 5 )
+flat = true
+icon_align = 1
+expand_icon = true
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Music"
+
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_MainMenuButton_pressed"]

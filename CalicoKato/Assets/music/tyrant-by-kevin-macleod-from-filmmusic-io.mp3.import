@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tyrant-by-kevin-macleod-from-filmmusic-io.mp3-96d37c57d45856df3a46c9a09133ad34.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/tyrant-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/tyrant-by-kevin-macleod-from-filmmusic-io.mp3-96d37c57d45856df3a46c9a09133ad34.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
